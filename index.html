@@ -19,6 +19,10 @@
 
     <!-- Animate Style  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Font Awesome  -->
+    <script src="https://kit.fontawesome.com/f499b60f30.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -27,7 +31,7 @@
 
         <!-- Name And Logo Section  -->
         <section class="container">
-            <div class="d-flex justify-content-start mt-4">
+            <div class="d-flex justify-content-start mt-4 animate__animated animate__flipInX">
                 <div>
                     <img class="pe-3" width="70px" src="images/logo.png" alt="">
                 </div>
@@ -52,8 +56,9 @@
 
                 <!-- iMac Image Colum -->
                 <div class="col col-lg-6 col-sm-12 col-12 col-md-12">
-                    <!-- Imc Image  -->
-                    <img width="80%" src="images/mac.png" alt="">
+                    <!-- iMAC Image  -->
+                    <img class="animate__animated animate__zoomInDown animate__slow" width="80%" src="images/mac.png"
+                        alt="">
                 </div>
 
                 <!-- Discription Colum -->
@@ -75,25 +80,29 @@
                     <!-- Memory Buy Buttons -->
                     <div class="mt-5">
                         <h1>Memory</h1>
-                        <button type="button" class="btn btn-outline-dark">8GB Unified Memory</button>
-                        <button type="button" class="btn btn-outline-dark">16GB Unified Memory</button>
+                        <button id="8GB-Memory-Price" type="button" class="btn btn-outline-dark">8GB Unified
+                            Memory</button>
+                        <button id="16GB-Memory-Price" type="button" class="btn btn-outline-dark">16GB Unified
+                            Memory</button>
 
                     </div>
 
                     <!-- Storage Buy Buttons -->
                     <div class="mt-5">
                         <h1>Storage</h1>
-                        <button type="button" class="btn btn-outline-dark">256GB SSD Storage</button>
-                        <button type="button" class="btn btn-outline-dark">512GB SSD Storage</button>
-                        <button type="button" class="btn btn-outline-dark">1TB SSD Storage</button>
+                        <button id="256GB-Storage" type="button" class="btn btn-outline-dark">256GB SSD Storage</button>
+                        <button id="512GB-Storage" type="button" class="btn btn-outline-dark">512GB SSD Storage</button>
+                        <button id="1TB-Storage" type="button" class="btn btn-outline-dark">1TB SSD Storage</button>
 
                     </div>
 
                     <!-- Delivery Option Buttons -->
                     <div class="mt-5">
                         <h1>Choose Your Delivery Option</h1>
-                        <button type="button" class="btn btn-outline-dark">Friday, Aug 27 Free Prime Delivery</button>
-                        <button type="button" class="btn btn-outline-dark">Early Delivery Charge $20</button>
+                        <button id="Free-Delivery" type="button" class="btn btn-outline-dark">Friday, Aug 27 Free Prime
+                            Delivery</button>
+                        <button id="Paid-Delivery" type="button" class="btn btn-outline-dark">Early Delivery Charge
+                            $20</button>
 
                     </div>
 
@@ -103,29 +112,29 @@
                         <div>
                             <div class="d-flex justify-content-between">
                                 <h5>Best Price</h5>
-                                <h5>$1299</h5>
+                                <h5><span id="Fixed-Price">1299</span>$</h5>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <h5>Extra Memory Cost</h5>
-                                <h5>$0</h5>
+                                <h5><span id="Memory-Cost">0</span>$</h5>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <h5>Extra Storage Cost</h5>
-                                <h5>$0</h5>
+                                <h5><span id="Storage-Cost">0</span>$</h5>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <h5>Delivery Charge</h5>
-                                <h5>$0</h5>
+                                <h5><span id="Delivery-Charge">0</span>$</h5>
                             </div>
                             <div class="bg-dark">
                                 <hr>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <h5>Total Price </h5>
-                                <h5>$1299</h5>
+                                <h5><span id="Sub-Total">1299</span>$</h5>
                             </div>
                             <hr>
 
@@ -133,8 +142,8 @@
                             <!-- Promo Code Add Input And Button  -->
                             <div class="mt-5 mb-3">
                                 <h4>Add Promo Code</h4>
-                                <input class="pt-1 pb-2 w-75" type="text">
-                                <button type="button" class="btn btn-danger pt-2 px-2">Apply</button>
+                                <input id="Promo-Fild" class="pt-1 pb-2 w-75" type="text">
+                                <button id="Promo-Button" type="button" class="btn btn-danger pt-2 px-2">Apply</button>
                             </div>
                         </div>
 
@@ -146,8 +155,17 @@
             <div>
                 <!-- Total Price To All Item  -->
                 <hr>
-                <h1 class="text-center">Total: $1299</h1>
-                <hr>
+                <h1 class="text-center">Total: <span id="Grand-Total">1299</span>$</h1>
+
+            </div>
+
+            <!-- Extra Buy Button  -->
+            <div class="text-center mt-5">
+                <button onclick="alert('💴 Insufficient Balance ❌. (😂Poor Peaple😂)')" type="button"
+                    class="btn btn-primary me-3 px-5">BUY NOW</button>
+                <button onclick="alert(' Cart Add SuccessFull ✅')" type="button" class="btn btn-success ms-3 px-5">Add
+                    To
+                    Cart</button>
             </div>
         </section>
         <!-- First Stap Add Image And Discription End -->
@@ -157,7 +175,11 @@
 
     <!-- Footer Start  -->
     <footer class="bg-dark mt-5">
-        <footer class=" text-center pt-3 pb-3"><small class="text-white"> 2021 iMAC, All Copyrights Reserved By
+
+        <!-- Footer Copyright Text Add  -->
+        <footer class=" text-center pt-3 pb-3"><small class="text-white"><i class="far fa-copyright"></i> 2021 Apple
+                iMAC M1, All
+                Copyrights Reserved By
                 J.N.ERFAN</small>
         </footer>
     </footer>
