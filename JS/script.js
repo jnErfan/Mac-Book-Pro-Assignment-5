@@ -18,7 +18,7 @@ function memoryCost(addition) {
         memoryPriceCost.innerText = memory16GBPrice;
     }
     // Calling  Total Price \\
-    calculateTotal()
+    calculateTotalPrice()
 }
 
 // 8GB Unified Memory Button Click EventListener \\
@@ -53,7 +53,7 @@ function extraStorageCost(addition) {
         storagePriceCost.innerText = storage1TBPrice;
     }
     // Calling  Total Price \\
-    calculateTotal()
+    calculateTotalPrice()
 }
 
 // 256GB SSD Storage \\
@@ -89,7 +89,7 @@ function deliveryOption(addition) {
     }
 
     // Calling  Total Price \\
-    calculateTotal()
+    calculateTotalPrice()
 }
 
 // Friday, Aug 27 Free Prime Delivery \\
@@ -105,7 +105,7 @@ document.getElementById('Paid-Delivery').addEventListener('click', function () {
 
 
 // Total Price WhithOut Promo Code \\
-function calculateTotal() {
+function calculateTotalPrice() {
     // Bringing The Id's \\
     const fixedPriceText = document.getElementById('Fixed-Price').innerText;
     const memoryCostText = document.getElementById('Memory-Cost').innerText;
@@ -137,7 +137,8 @@ document.getElementById('Promo-Button').addEventListener('click', function () {
     const subTotal = document.getElementById('Sub-Total').innerText;
 
     // When Use Promo Code (stevekaku) Get Discount 20% Of Total Price \\
-    if (promoFildInput.value == 'stevekaku') {
+    //    Case Sensitive 
+    if (promoFildInput.value.toLowerCase() == 'stevekaku') {
         const get20PersentDiscount = (80 / 100) * subTotal;
         document.getElementById('Grand-Total').innerText = get20PersentDiscount;
     }
