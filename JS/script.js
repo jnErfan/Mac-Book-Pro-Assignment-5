@@ -2,12 +2,20 @@
 
 // Extra Memory Cost \\
 function memoryCost(addition) {
+
+    // I could have set the Prices value directly if I wanted But to organize it a little, I kept it as a separate variable and then set the value. \\
+
+    // 8 Gb Memory Price \\
+    const memory8GBPrice = 0;
+    // 16 Gb Memory Price \\
+    const memory16GBPrice = 180;
+
     const memoryPriceCost = document.getElementById('Memory-Cost');
     if (addition == true) {
-        memoryPriceCost.innerText = 0;
+        memoryPriceCost.innerText = memory8GBPrice;
     }
     else {
-        memoryPriceCost.innerText = 180;
+        memoryPriceCost.innerText = memory16GBPrice;
     }
     // Calling  Total Price \\
     calculateTotal()
@@ -27,15 +35,22 @@ document.getElementById('16GB-Memory-Price').addEventListener('click', function 
 
 // Extra Storage Cost \\
 function extraStorageCost(addition) {
+    //   256GB SSD Storage Price  \\
+    const storage256GBPrice = 0;
+    //   512GB SSD Storage Price  \\
+    const storage512GBPrice = 100;
+    //   1TB SSD Storage Price  \\
+    const storage1TBPrice = 180;
+
     const storagePriceCost = document.getElementById('Storage-Cost');
     if (addition == '256BG') {
-        storagePriceCost.innerText = 0;
+        storagePriceCost.innerText = storage256GBPrice;
     }
     else if (addition == '512GB') {
-        storagePriceCost.innerText = 100;
+        storagePriceCost.innerText = storage512GBPrice;
     }
     else {
-        storagePriceCost.innerText = 180;
+        storagePriceCost.innerText = storage1TBPrice;
     }
     // Calling  Total Price \\
     calculateTotal()
@@ -60,12 +75,17 @@ document.getElementById('1TB-Storage').addEventListener('click', function () {
 
 // Delivery Charge \\
 function deliveryOption(addition) {
+    // Free Prime Delivery Charge \\
+    const freeDeliveryCharge = 0;
+    // Early Delivery Charge \\
+    const paidDeliveryCharge = 20;
+
     const deliveryCharge = document.getElementById('Delivery-Charge');
     if (addition == 'Free') {
-        deliveryCharge.innerText = 0;
+        deliveryCharge.innerText = freeDeliveryCharge;
     }
     else {
-        deliveryCharge.innerText = 20;
+        deliveryCharge.innerText = paidDeliveryCharge;
     }
 
     // Calling  Total Price \\
@@ -116,7 +136,7 @@ document.getElementById('Promo-Button').addEventListener('click', function () {
 
     const subTotal = document.getElementById('Sub-Total').innerText;
 
-    // When Use Promo Code Discount 20% Of Total Price \\
+    // When Use Promo Code (stevekaku) Get Discount 20% Of Total Price \\
     if (promoFildInput.value == 'stevekaku') {
         const get20PersentDiscount = (80 / 100) * subTotal;
         document.getElementById('Grand-Total').innerText = get20PersentDiscount;
@@ -124,7 +144,7 @@ document.getElementById('Promo-Button').addEventListener('click', function () {
 
     // Error Handling \\
     else {
-        alert('Invalid Promo Code')
+        alert('Invalid Promo Code ❌')
     }
 
     // Clear Input Fild \\
